@@ -7,6 +7,4 @@ public interface IMotor {
 	public void desligar();
 	
 	public double verificarVelocidade();
-	
-	public boolean verificarStatus();
 }

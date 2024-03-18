@@ -24,9 +24,4 @@ public class ImplMotor implements IMotor {
 	public double verificarVelocidade() {
 		return motor.getVelocidade();
 	}
-	
-	@Override
-	public boolean verificarStatus() {
-		return motor.getStatus();
-	}
 }

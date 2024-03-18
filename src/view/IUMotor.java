@@ -73,16 +73,8 @@ public class IUMotor extends JFrame {
 		
 		JButton btnDiminuirVelocidade = new JButton("Velocidade -");
 		btnDiminuirVelocidade.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-				if(estendido.verificarStatus() == false) {
-					JOptionPane.showMessageDialog(null, "O motor está desligado.", "Erro", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-				if(estendido.verificarVelocidade() - 500 < 0) {
-					JOptionPane.showMessageDialog(null, "Velocidade ultrapassou o limite de velocidade mínima do motor.", "Erro", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-				
 				estendido.diminuirVelocidade();
 				String newString = "Status: Ligado \nVelocidade: " + estendido.verificarVelocidade() + " RPM";
 				txtStatusEstendido.setText(newString);
@@ -93,16 +85,8 @@ public class IUMotor extends JFrame {
 		
 		JButton btnAumentarVelocidade = new JButton("Velocidade +");
 		btnAumentarVelocidade.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
-				if(estendido.verificarStatus() == false) {
-					JOptionPane.showMessageDialog(null, "O motor está desligado.", "Erro", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-				if(estendido.verificarVelocidade() + 500 > 7000) {
-					JOptionPane.showMessageDialog(null, "Velocidade ultrapassou o limite de velocidade máxima do motor.", "Erro", JOptionPane.ERROR_MESSAGE);
-					return;
-				}
-				
 				estendido.aumentarVelocidade();
 				String newString = "Status: Ligado \nVelocidade: " + estendido.verificarVelocidade() + " RPM";
 				txtStatusEstendido.setText(newString);
@@ -113,6 +97,7 @@ public class IUMotor extends JFrame {
 		
 		JButton btnLigarEstendido = new JButton("Ligar");
 		btnLigarEstendido.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				estendido.ligar();
 				String newString = "Status: Ligado \nVelocidade: " + estendido.verificarVelocidade() + " RPM";
@@ -124,6 +109,7 @@ public class IUMotor extends JFrame {
 		
 		JButton btnDesligarEstendido = new JButton("Desligar");
 		btnDesligarEstendido.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				estendido.desligar();
 				String newString = "Status: Desligado ";
@@ -148,6 +134,7 @@ public class IUMotor extends JFrame {
 		JButton btnLigarMotor = new JButton("Ligar");
 		btnLigarMotor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				simples.ligar();
 				String newString = "Status: Ligado \nVelocidade: " + simples.verificarVelocidade() + " RPM";
 				txtStatusMotor.setText(newString);
@@ -159,6 +146,7 @@ public class IUMotor extends JFrame {
 		JButton btnDesligarMotor = new JButton("Desligar");
 		btnDesligarMotor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				simples.desligar();
 				String newString = "Status: Desligado ";
 				txtStatusMotor.setText(newString);
